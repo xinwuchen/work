@@ -1,4 +1,5 @@
-﻿# Django settings for mysite project.
+﻿#c4
+# Django settings for mysite project.
 import os
 
 DEBUG = True
