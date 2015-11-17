@@ -1,0 +1,15 @@
+﻿{% extends "base.html"%}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<div>
+    {% if error %}
+    <p style="color :red;">请输入要查询的作者姓名！</p>
+    {% endif %}
+    <form action="" method="get">
+        <input class="in" value="请输入要查询的作者姓名" name='query' onfocus="if(value=='请输入要查询的作者姓名'){value=''}" />
+        <input class="sub" type="submit" value="搜索" />
+    </form>
+</div>
+{% endblock %}

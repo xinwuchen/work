@@ -1,0 +1,25 @@
+﻿{% extends "base.html" %}
+
+{% block title %}查询结果{% endblock %}
+
+{% block content %}
+<div style="font-family:'Microsoft YaHei';
+            font-size:20px;">
+    <p>您查询的是：<strong>{{query}}</strong></p>
+    {% if books %}
+    <p>找到 {{books|length}} 本。</p>
+    <ul>
+        {% for book in books %}
+        <li>
+            <a style="margin:30px" href="{{book.ISBN}}">{{book.Title}}</a>
+            <a style="margin:30px" href="/delete/?ISBN={{book.ISBN}}">删除图书</a>
+            <a style="margin:30px" href="/edit/?ISBN={{book.ISBN}}">修改图书信息</a>
+        </li>
+
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>没有找到符合要求的书！</p>
+    {% endif %}
+</div>
+{% endblock %}

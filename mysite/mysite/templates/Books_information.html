@@ -1,0 +1,49 @@
+﻿{% extends "base.html" %}
+
+{% block title %}书籍信息{% endblock %}
+
+{% block content %}
+{% for book in books %}
+<table border="0" align="center" >
+    <tr>
+        <th>ISBN</th>
+        <td align="center">{{book.ISBN}}</td>
+    </tr>
+    <tr>
+        <th>书名</th>
+        <td align="center">{{book.Title}}</td>
+    </tr>
+    <tr>
+        <th>出版社</th>
+        <td align="center">{{book.Publisher}}</td>
+    </tr>
+    <tr>
+        <th>出版日期 </th>
+        <td align="center">{{book.PublishDate}}</td>
+    </tr>
+    <tr>
+        <th>价格</th>
+        <td>{{book.Price}}</td>
+    </tr>
+    <tr>
+        <th colspan="2">作者</th>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <td align="center">{{book.Author.AuthorID}}</td>
+    </tr>
+    <tr>
+        <th>姓名</th>
+        <td align="center">{{book.Author.Name}}</td>
+    </tr>
+    <tr>
+        <th>年龄</th>
+        <td align="center">{{book.Author.Age}}</td>
+    </tr>
+    <tr>
+        <th>国籍</th>
+        <td align="center">{{book.Author.Country}}</td>
+    </tr>
+</table>      
+{% endfor %}
+{% endblock %}

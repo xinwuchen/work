@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .lead {
+            float:left;
+        }
+         ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+       .lead a:link, .lead  a:visited {
+            font-family:STZhongsong;
+            font-size:30px;
+            display:block;
+            width: 180px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #bebebe;
+            text-align: center;
+            padding: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+       .lead  a:hover, .lead  a:active {
+            background-color: #cc0000;
+        }
+       .in {
+           width:300px;
+           height:40px;
+           font-size:18px;
+       }
+       .sub{
+           width:60px;
+           height:40px;
+           font-size:18px; 
+
+       }
+       body{
+           text-align:center;
+       }  
+      h1{
+          font-family:LiSu;
+      }
+    </style>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+
+<body>
+    <h1>我的图书管理系统</h1>
+    <hr />
+    <div class=" lead">
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="/search">搜索</a></li>
+            <li><a href="/addA">增加作者</a></li>
+            <li><a href="/addB">添加书籍</a></li>
+            <li><a href="/about">相关说明</a></li>
+        </ul>
+    </div>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+        
+    <div>
+        {% block footer %} 
+        {% endblock %}
+    </div>
+</body>
+</html>

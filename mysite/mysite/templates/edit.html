@@ -1,0 +1,61 @@
+﻿{% extends "base.html" %}
+
+{% block title %}书籍信息{% endblock %}
+
+{% block content %}
+{% if errors %}
+<ul style="color:red;">
+    {% for error in errors %}
+    <li>{{error}}</li>
+    {% endfor %}
+</ul>
+    {% endif %}
+<form action="" method="post">
+    {% for book in books %}
+    <table border="0" align="center">
+        <tr>
+            <th>ISBN</th>
+            <td align="center"><input name="ISBN" value="{{book.ISBN}}" /></td>
+        </tr>
+        <tr>
+            <th>书名</th>
+            <td align="center"><input name="Title" value="{{book.Title}}" /></td>
+        </tr>
+        <tr>
+            <th>出版社</th>
+            <td align="center"><input name="Publisher" value="{{book.Publisher}}" /></td>
+        </tr>
+        <tr>
+            <th>出版日期 </th>
+            <td align="center"><input type="date"  name="PublishDate" value="{{book.PublishDate}}" /></td>
+        </tr>
+        <tr>
+            <th>价格</th>
+            <td><input name="Price" value="{{book.Price}}" /></td>
+        </tr>
+        <tr>
+            <th colspan="2">作者</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <td align="center"><input name="AuthorID" value="{{book.Author.AuthorID}}" /></td>
+        </tr>
+        <tr>
+            <th>姓名</th>
+            <td align="center"><input name="Name" value="{{book.Author.Name}}" /></td>
+        </tr>
+        <tr>
+            <th>年龄</th>
+            <td align="center"><input name="Age" value="{{book.Author.Age}}" /></td>
+        </tr>
+        <tr>
+            <th>国籍</th>
+            <td align="center"><input name="Country" value="{{book.Author.Country}}" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right"><input type="submit" value="保存" /></td>
+        </tr>
+    </table>
+</form>
+{% endfor %}
+{% endblock %}
